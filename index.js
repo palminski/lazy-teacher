@@ -57,8 +57,8 @@ document.getElementById("Swis-Referral-CustomField-90331-input").value = "${hate
 
     $('#referral-list').append(`
 <li> 
-<button onclick="copyText(${sheet}">Copy Sheet Info for ${studentName}</button>
-<button onclick="copyText(${swiss}">Copy Swiss Info for ${studentName}</button>
+<button onclick="copyText(${sheet})">Copy Sheet Info for ${studentName}</button>
+<button onclick="copyText(${swiss})">Copy Swiss Info for ${studentName}</button>
 </li>
     
     `)
