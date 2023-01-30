@@ -18,5 +18,3 @@ document.getElementById("Swis-Referral-CustomField-90331-input").value = "No"; /
 
 //SYNERGY
 document.querySelectorAll('data-rev-type="DATE"');
-
-01/19/2023 8:23 PM
