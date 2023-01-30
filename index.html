@@ -11,7 +11,7 @@
 </head>
 <body>
     <h1>Add Info Here</h1>
-    <form action="">
+    <form action="" id="behavior-form">
         <input type="text" id="date" placeholder="date">
         <input type="text" id="time" placeholder="time">
         <input type="text" id="studentName" placeholder="studentName">
@@ -19,24 +19,26 @@
         <input type="text" id="staffName" placeholder="staffName">
         <!--  -->
         <label for="major">Major</label>
-        <input type="radio" id="major" name="major-minor" value="Major">
+        <input type="radio" id="major" name="majorMinor" value="Major">
         <label for="minor">Minor</label>
-        <input type="radio" id="minor" name="major-minor" value="Minor">
+        <input type="radio" id="minor" name="majorMinor" value="Minor">
         <!--  -->
         <input type="text" id="offence" placeholder="offence">
-        <input type="text" id="consequence-1" placeholder="consequence-1">
-        <input type="text" id="consequence-2" placeholder="consequence-2">
-        <input type="text" id="consequence-3" placeholder="consequence-3">
-        <input type="text" id="consequence-4" placeholder="consequence-4">
-        <input type="text" id="consequence-5" placeholder="consequence-5">
+        <input type="text" id="consequence1" placeholder="consequence1">
+        <input type="text" id="consequence2" placeholder="consequence2">
+        <input type="text" id="consequence3" placeholder="consequence3">
+        <input type="text" id="consequence4" placeholder="consequence4">
+        <input type="text" id="consequence5" placeholder="consequence5">
 
         <input type="text" id="motivation" placeholder="motivation">
         <input type="text" id="others" placeholder="others">
 
-        <input type="text" id="hate-symbol" placeholder="hate-symbol">
+        <input type="text" id="hateSymbol" placeholder="hateSymbol">
 
-        <textarea name="notes" id="offence" cols="30" rows="10" placeholder="Notes" ></textarea>
+        <textarea name="notes" id="notes" cols="30" rows="10" placeholder="Notes" ></textarea>
+        <button>Submit</button>
     </form>
-    
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
 </body>
 </html>
