@@ -7,11 +7,18 @@
     <title>Document</title>
     <style>
         input {display: block;}
+        select {display: block;}
         .ui-helper-hidden-accessible{
             display: none !important;
         }
         .ui-autocomplete.ui-menu.ui-widget.ui-widget-content{
             background-color: rgb(156, 156, 156);
+        }
+        li {
+            background-color: bisque;
+        }
+        li:nth-child(odd){
+            background-color: aquamarine;
         }
     </style>
 </head>
@@ -30,28 +37,63 @@
         </select>
         
         <input type="text" id="staffName" placeholder="staffName">
+        <br/>
         <!--  -->
-        <label for="major">Major</label>
-        <input type="radio" id="major" name="majorMinor" value="Major">
-        <label for="minor">Minor</label>
-        <input type="radio" id="minor" name="majorMinor" value="Minor">
+        <select type="text" id="majorMinor" >
+            <option value="Major">Major</option>
+            <option value="Minor">Minor</option>
+        </select>
         <!--  -->
         <input type="text" id="offence" placeholder="offence">
-        <input type="text" id="consequence1" placeholder="consequence1">
-        <input type="text" id="consequence2" placeholder="consequence2">
-        <input type="text" id="consequence3" placeholder="consequence3">
-        <input type="text" id="consequence4" placeholder="consequence4">
-        <input type="text" id="consequence5" placeholder="consequence5">
-
+        <br/>
+        <input type="text" class="consequence-list" id="consequence1" placeholder="consequence1">
+        <input type="text" class="consequence-list" id="consequence2" placeholder="consequence2">
+        <input type="text" class="consequence-list" id="consequence3" placeholder="consequence3">
+        <input type="text" class="consequence-list" id="consequence4" placeholder="consequence4">
+        <input type="text" class="consequence-list" id="consequence5" placeholder="consequence5">
+        <br/>
         <input type="text" id="locationOfI" placeholder="location">
-        <input type="text" id="motivation" placeholder="motivation">
-        <input type="text" id="others" placeholder="others">
 
-        <input type="text" id="hateSymbol" placeholder="hateSymbol">
+        <select type="text" id="motivation" >
+            <option value="Unknown Motivation">Unknown Motivation</option>
+            <option value="Obtain Peer Attention">Obtain Peer Attention</option>
+            <option value="Avoid Tasks/Activities">Avoid Tasks/Activities</option>
+            <option value="Obtain Items/Activities">Obtain Items/Activities</option>
+            <option value="Obtain Adult Attention">Obtain Adult Attention</option>
+            <option value="Avoid Adult">Avoid Adult</option>
+            <option value="Avoid Peer(s)">Avoid Peer(s)</option>
+            <option value="Other">Other</option>
+
+        </select>
+
+        
+        <select type="text" id="others" >
+            <option value="Unknown">Unknown</option>
+            <option value="None">None</option>
+            <option value="Peers">Peers</option>
+            <option value="Teacher">Teacher</option>
+            <option value="Substitute">Substitute</option>
+            <option value="Other">Other</option>
+        </select>
+
+        
+        
 
         <textarea name="notes" id="notes" cols="30" rows="10" placeholder="Notes" ></textarea>
+        <br/>
+        <select type="text" id="hateSymbol" >
+            <option value="No">No Hate Symbol</option>
+            <option value="Yes">Yes</option>
+        </select>
+        <br/>
+        <br/>
         <button>Submit</button>
     </form>
+
+    <ul id="referral-list">
+
+    </ul>
+
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
     <script src="./arrays.js"></script>

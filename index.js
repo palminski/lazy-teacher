@@ -1,7 +1,9 @@
 console.log('script is running');
 
 
-
+const copyText = (text) => {
+    navigator.clipboard.writeText(text);
+}
 
 const formSubmitHandler = (e) => {
     e.preventDefault();
@@ -11,7 +13,7 @@ const formSubmitHandler = (e) => {
     studentName = $('#studentName').val();
     grade = $('#grade').val();
     staffName = $('#staffName').val();
-    majorMinor = $('input:radio[name=majorMinor]:checked').val();//
+    majorMinor = $('#majorMinor').val();//
     offence = $('#offence').val();
     consequence1 = $('#consequence1').val();
     consequence2 = $('#consequence2').val();
@@ -53,12 +55,20 @@ document.getElementById("Swis-Referral-CustomField-90331-input").value = "${hate
     console.log(sheet);
     console.log(swiss);
 
+    $('#referral-list').append(`
+<li> 
+<button onclick="copyText(${sheet}">Copy Sheet Info for ${studentName}</button>
+<button onclick="copyText(${swiss}">Copy Swiss Info for ${studentName}</button>
+</li>
+    
+    `)
+
     $('#date').val("");
     $('#time').val("");
     $('#studentName').val("");
     $('#grade').val("");
     $('#staffName').val("");
-    $('input:radio[name=majorMinor]:checked').prop('checked', false);//
+    $('#majorMinor').val("Major")
     $('#offence').val("");
     $('#consequence1').val("");
     $('#consequence2').val("");
@@ -67,16 +77,17 @@ document.getElementById("Swis-Referral-CustomField-90331-input").value = "${hate
     $('#consequence5').val("");
     $('#motivation').val("");
     $('#others').val("");
-    $('#hateSymbol').val("");
+    $('#hateSymbol').val("No");
     $('#notes').val("");
     $('#locationOfI').val("");
 
 }
 
-$('#consequence1').autocomplete({source: consequences});
-$('#consequence2').autocomplete({source: consequences});
-$('#consequence3').autocomplete({source: consequences});
-$('#consequence4').autocomplete({source: consequences});
-$('#consequence5').autocomplete({source: consequences});
+//Autocomplete
+$('.consequence-list').autocomplete({source: consequences});
+$('#staffName').autocomplete({source: staffNames});
+$('#offence').autocomplete({source: offences});
+$("#locationOfI").autocomplete({source: locations});
+
 
 $('#behavior-form').on("submit", formSubmitHandler);
