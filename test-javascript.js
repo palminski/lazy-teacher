@@ -1,5 +1,7 @@
 id="Swis-Referral-ReferralTypeField-input"
 
+
+//SWISS 
 document.getElementById("Swis-Referral-ReferralTypeField-input").value = "Major";
 document.getElementById("Swis-Referral-StudentField-input").value = "Test";
 document.getElementById("Swis-Referral-GradeField-input").value = "8";
@@ -13,3 +15,8 @@ document.getElementById("Swis-Referral-ActionTakenField-0-input").value = "Resti
 document.getElementById("Swis-Referral-ActionTakenField-1-input").value = "Stockade";
 document.getElementById("Swis-Referral-NotesField-input").value = "None";
 document.getElementById("Swis-Referral-CustomField-90331-input").value = "No"; //hate Symbol
+
+//SYNERGY
+document.querySelectorAll('data-rev-type="DATE"');
+
+01/19/2023 8:23 PM
