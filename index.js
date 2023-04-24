@@ -2,6 +2,8 @@ console.log('script is running');
 
 
 const copyText = (text) => {
+    
+    console.log(text);
     navigator.clipboard.writeText(text);
 }
 
@@ -26,30 +28,30 @@ const formSubmitHandler = (e) => {
     hateSymbol = $('#hateSymbol').val();
     notes = $('#notes').val();
     let sheet = ''
-    if (majorMinor === 'Major') {
-        sheet = `${date} ${time}	${studentName}	${staffName}		${offence}	${`${consequence1} ${consequence2} ${consequence3} ${consequence4} ${consequence5}`}	${notes}`;
+    if (majorMinor === "Administrator-managed (Major)") {
+        sheet = `${date} ${time}	${studentName}	${staffName}		${offence}	${`${consequence1 && consequence1 + ","}  ${consequence2 && consequence2 + ","} ${consequence3 && consequence3 + ","} ${consequence4 && consequence4 + ","} ${consequence5 && consequence5}`}	${notes}`;
     }
     else {
-        sheet = `${date} ${time}	${studentName}	${staffName}	${offence}		${`${consequence1} ${consequence2} ${consequence3} ${consequence4} ${consequence5}`}	${notes}`;
+        sheet = `${date} ${time}	${studentName}	${staffName}	${offence}		${`${consequence1 && consequence1 + ","}  ${consequence2 && consequence2 + ","} ${consequence3 && consequence3 + ","} ${consequence4 && consequence4 + ","} ${consequence5 && consequence5}`}	${notes}`;
     }
     let swiss = `
-document.getElementById("Swis-Referral-ReferralTypeField-input").value = "${majorMinor}";
-document.getElementById("Swis-Referral-StudentField-input").value = "${studentName}";
-document.getElementById("Swis-Referral-GradeField-input").value = "${grade}";
-document.getElementById("Swis-Referral-EducatorField-input").value = "${staffName}";
-document.getElementById("Swis-Referral-DateField-input").value = "${date}";
-document.getElementById("Swis-Referral-TimeField-input").value = "${time}";
-document.getElementById("Swis-Referral-LocationField-input").value = "${locationOfI}";
-document.getElementById("Swis-Referral-ProblemBehaviorField-0-input").value = "${offence}";
-document.getElementById("Swis-Referral-MotivationField-input").value = "${motivation}";
-document.getElementById("Swis-Referral-OthersInvolvedField-input").value = "${others}";
-document.getElementById("Swis-Referral-ActionTakenField-0-input").value = "${consequence1}";
-document.getElementById("Swis-Referral-ActionTakenField-1-input").value = "${consequence2}";
-document.getElementById("Swis-Referral-ActionTakenField-2-input").value = "${consequence3}";
-document.getElementById("Swis-Referral-ActionTakenField-3-input").value = "${consequence4}";
-document.getElementById("Swis-Referral-ActionTakenField-4-input").value = "${consequence5}";
-document.getElementById("Swis-Referral-NotesField-input").value = "${notes}";
-document.getElementById("Swis-Referral-CustomField-90331-input").value = "${hateSymbol}"; 
+document.getElementById(\'Swis-Referral-ReferralTypeField-input\').value = \'${majorMinor}\';
+document.getElementById(\'Swis-Referral-StudentField-input\').value = \'${studentName}\';
+document.getElementById(\'Swis-Referral-GradeField-input\').value = \'${grade}\';
+document.getElementById(\'Swis-Referral-EducatorField-input\').value = \'${staffName}\';
+document.getElementById(\'Swis-Referral-DateField-input\').value = \'${date}\';
+document.getElementById(\'Swis-Referral-TimeField-input\').value = \'${time}\';
+document.getElementById(\'Swis-Referral-LocationField-input\').value = \'${locationOfI}\';
+document.getElementById(\'Swis-Referral-ProblemBehaviorField-0-input\').value = \'${offence}\';
+document.getElementById(\'Swis-Referral-MotivationField-input\').value = \'${motivation}\';
+document.getElementById(\'Swis-Referral-OthersInvolvedField-input\').value = \'${others}\';
+document.getElementById(\'Swis-Referral-ActionTakenField-0-input\').value = \'${consequence1}\';
+document.getElementById(\'Swis-Referral-ActionTakenField-1-input\').value = \'${consequence2}\';
+document.getElementById(\'Swis-Referral-ActionTakenField-2-input\').value = \'${consequence3}\';
+document.getElementById(\'Swis-Referral-ActionTakenField-3-input\').value = \'${consequence4}\';
+document.getElementById(\'Swis-Referral-ActionTakenField-4-input\').value = \'${consequence5}\';
+document.getElementById(\'Swis-Referral-NotesField-input\').value = \'${notes}\';
+document.getElementById(\'Swis-Referral-CustomField-90331-input\').value = \'${hateSymbol}\'; 
     `;
 
     console.log(sheet);
@@ -57,8 +59,10 @@ document.getElementById("Swis-Referral-CustomField-90331-input").value = "${hate
 
     $('#referral-list').append(`
 <li> 
-<button onclick="copyText(${sheet})">Copy Sheet Info for ${studentName}</button>
-<button onclick="copyText(${swiss})">Copy Swiss Info for ${studentName}</button>
+
+<textarea>${swiss}</textarea>
+<button onclick="copyText('${sheet}')">Copy Sheet Info for ${studentName}</button>
+
 </li>
     
     `)
